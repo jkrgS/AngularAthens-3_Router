@@ -42,13 +42,27 @@ img.aaimg {
 }
 
 .list {
-    font-size: 26px !important;
+    font-size: 16px !important;
+    padding-left: 33px !important;
+    font-style: oblique !important;
     list-style-position: inside;
 }
 
-/* code {
-    width: 150px;
-    height: 150px;
-} */
+.container {
+    display: table;
+    width: 100%;
+}
+
+.left-half {
+    position: absolute;
+    left: 0px;
+    width: 50%;
+  }
+  
+  .right-half {
+    position: absolute;
+    right: 0px;
+    width: 50%;
+  }
 
   
