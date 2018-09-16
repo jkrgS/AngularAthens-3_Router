@@ -106,6 +106,9 @@
 						<a href="https://twitter.com/GeorgeJkrr" target="_blank" style="color: white"><i class="fa fa-twitter-square" style="font-size: 33px"><span style="font-size: 18px">  ???</span></i></a>
 					</div>
 				</section>
+
+
+
 					<!-- Slide #3 Basics of navigation and routing to lazy loading -->
 				<section>
 					<section>
@@ -182,7 +185,8 @@
 					</section>					
 
 				</section>
-					<!-- Slide #4 // Scaling and architecture -->
+
+				<!-- Resolvers -->
 				<section>
 					<section>
 						<div class="floating" style="height: 100px; width: 100px;">
@@ -190,11 +194,48 @@
 						</div>
 
 						<h3>
-							Scaling and architecture 
-							<br> <br>
+							Router Resolvers
+						</h3>
+						<h4>
+							
+						</h4>
+						<ul class="list">
+							<p style="font-size: 33px;">General Routing Flow</p>
+								<li style="padding-left: 33px !important;">
+									User clicks the link
+								</li>
+								<li style="padding-left: 33px !important;">
+									Angular loads the respective component
+								</li>
+							<p style="font-size: 33px;">Routing Flow with Resolver</p>
+								<li style="padding-left: 33px !important;">
+									User clicks the link
+								</li>
+								<li style="padding-left: 33px !important;">
+									Angular executes certain code and returns a value or observable
+								</li>
+								<li style="padding-left: 33px !important;">
+									You can collect the returned value or observable 
+									in constructor or in ngOnInit, in the component 
+									which is about to load
+								</li>
+								<li style="padding-left: 33px !important;">
+									Use the collected the data for your purpose
+								</li>
+								<li style="padding-left: 33px !important;">
+									Now you can load your component
+								</li>
+						</ul>
 
-							<strong> #Go Down!!! </strong> 
+					</section>
 
+					<section>
+						<div class="floating" style="height: 100px; width: 100px;">
+							<img class="aaimgNav" src="./assets/pics/angularathens.png" alt="AA">
+						</div>
+
+						<h3>
+							How to use a resolver
 						</h3>
 
 					</section>
@@ -205,9 +246,199 @@
 						</div>
 
 						<h3>
-							Bottom Section 1
+							When to use a resolver
 						</h3>
+						<ul class="list">
+							<p style="font-size: 33px;">
+								Whenever you need to get the data before the component initialization							
+							</p>
+								<li style="padding-left: 33px !important;">
+									This means that the data shown is an integral part of the component; 
+									thus the component has no reason to exist (be shown) 
+									without its fully loaded data.
+									  <ul class="list">
+										<li style="padding-left: 33px !important;">
+											Showing a prefilled form
+										</li>
+										<li style="padding-left: 33px !important;">
+											Showing the user’s booking
+										</li>
+										<li style="padding-left: 33px !important;">
+											<del> Showing a map </del> – a partially loaded map is still useful to the user
+										</li>
+										<li style="padding-left: 33px !important;">
+											Showing the details of a place on the map
+										</li>
+									</ul>
+								</li>
+						</ul>
 
+					</section>
+
+					<section>
+						<div class="floating" style="height: 100px; width: 100px;">
+							<img class="aaimgNav" src="./assets/pics/angularathens.png" alt="AA">
+						</div>
+
+						<h3>
+							When to use a resolver
+						</h3>
+						<ul class="list">
+							<p style="font-size: 33px;">
+								Single Responsibility							
+							</p>
+								<li style="padding-left: 33px !important;">
+									A components only responsibility is showing the 
+									data and managing the data interaction 
+									with the user
+
+								</li>
+								<li style="padding-left: 33px !important;">
+									It should not:
+									<ul class="list">
+										<li style="padding-left: 33px !important;">
+											manage the loading state of a request
+										</li>
+										<li style="padding-left: 33px !important;">
+											route to another page if the data is not there
+										</li>
+										<li style="padding-left: 33px !important;">
+											handle multiple services to collect all the data required
+										</li>
+									</ul>
+								</li>
+						</ul>
+					</section>
+					<section>
+						<div class="floating" style="height: 100px; width: 100px;">
+							<img class="aaimgNav" src="./assets/pics/angularathens.png" alt="AA">
+						</div>
+
+						<h3>
+							When <strong>NOT</strong> to use a resolver
+						</h3>
+						<ul class="list">
+							<li style="padding-left: 33px !important;">
+									A resolver leads to the data being 
+									retrieved synchronously – which can be a good 
+									pattern or an anti-pattern depending on the component’s 
+									role and functionality
+							</li>
+							<li style="padding-left: 33px !important;">
+									Can’t fine tune the applications loading 
+									spinners down to component level
+							</li>
+							<li style="padding-left: 33px !important;">
+									None of the component’s content is displayed 
+									until the data is fetched
+							</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- Slide #4 // Scaling and architecture -->
+				<section>
+					<section>
+						<div class="floating" style="height: 100px; width: 100px;">
+							<img class="aaimgNav" src="./assets/pics/angularathens.png" alt="AA">
+						</div>
+
+						<h3>
+							Scaling an Angular application using multiple router modules
+						</h3>
+						<ul class="list">
+							<li style="padding-left: 33px !important;">
+								Each functional page should have it’s 
+								own bookmarkable/refreshable URL
+							</li>
+							<li style="padding-left: 33px !important;">
+								After ~20 pages/URLS the router module 
+								tends to become difficult to maintain
+							</li>
+							<li style="padding-left: 33px !important;">
+								Should be divided in separate router modules
+							</li>
+						</ul>
+					</section>
+					<section>
+							<div class="floating" style="height: 100px; width: 100px;">
+								<img class="aaimgNav" src="./assets/pics/angularathens.png" alt="AA">
+							</div>
+							<img  src="./assets/pics/tree_structure_graph.png" alt="AA">
+					</section>
+					<section>
+						<div class="floating" style="height: 100px; width: 100px;">
+							<img class="aaimgNav" src="./assets/pics/angularathens.png" alt="AA">
+						</div>
+
+						<h3>
+							Tree structure to be maintainable
+						</h3>
+						<ul class="list">
+							<li style="padding-left: 33px !important;">
+								Folders and their modules should have the exact same 
+								name with their expected URL
+							</li>
+							<li style="padding-left: 33px !important;">
+								A clear strategy should be kept regarding data 
+								sharing and components/services sharing
+								<ul class="list">
+									
+									<li style="padding-left: 33px !important;">
+										Redux, ngrx/store
+									</li>
+									
+									<li style="padding-left: 33px !important;">
+										Shared components/services/etc. folder
+									</li>
+									
+									<li style="padding-left: 33px !important;">
+										Shared library module (?)
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					
+					<section>
+						<div class="floating" style="height: 100px; width: 100px;">
+							<img class="aaimgNav" src="./assets/pics/angularathens.png" alt="AA">
+						</div>
+
+						<h3>
+							To lazy-load or not
+						</h3>
+						<ul class="list">
+							<li style="padding-left: 33px !important;">
+								While scaling an architectural decision should be made 
+								to include or not lazy loading
+							</li>
+							<li style="padding-left: 33px !important;">
+								This decision can happen in a module per module basis
+								<ul class="list">
+									
+									<li style="padding-left: 33px !important;">
+										What % of users is expected to reach each module? How often?
+									</li>
+									
+									<li style="padding-left: 33px !important;">
+										Do we care about server load?
+									</li>
+									
+									<li style="padding-left: 33px !important;">
+										Is the initial load time less important than 
+										having fast access to all routes 
+										(for ex. betting app)
+									</li>
+
+									<li style="padding-left: 33px !important;">
+										Is the application intended for mobile use? 
+										Do we want to save some mobile data 
+										from its users?
+									</li>
+								</ul>
+							</li>
+						</ul>
 					</section>
 				</section>
 
