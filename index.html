@@ -4,10 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Angular Athens #2</title>
+		<title>Angular Athens #3</title>
 
-		<meta name="description" content="Angular Athens #2 Presentation for Angular introduction-Angular CLI (20180703)">
-		<meta name="author" content="George Sisko">
+		<meta name="description" content="Angular Athens #3: Routing">
+		<meta name="author" content="George Sisko, Giannis Smirnios">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -19,6 +19,7 @@
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 		<!-- font-awesome -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<!-- Printing and PDF exports -->
@@ -79,31 +80,35 @@
 					</div>
 
 					<div class="right-half">
-						<img class="my-img" src="Photo" alt="Photo">
+						<img class="my-img" src="./assets/pics/gs_small.jpg" alt="GS">
 						<p style="line-height: 5px">
-							John Smirnios
+							Giannis Smirnios
 						</p>
-							<p style="font-size: 18px">??? @Intrasoft International</p>
+							<p style="font-size: 18px">Tech team lead @Intrasoft International</p>
 							<br>
 
-						<ul class="list">
+						<ul class="list" style="padding-left: 0px !important;margin-left: 0px !important;">
 							<li >
-								???
+								Full Stack Software Engineer
 							</li>
-							<li>
-								???
+							<li style="color: white">
+								<i class="fas fa-user-astronaut" style="font-size:20px"></i> &nbsp;
+								<i class="fa fa-keyboard" style="font-size:20px"></i> &nbsp;
+								<i class="far fa-futbol" style="font-size:20px"></i> &nbsp;
 							</li>
-							<li>
-								???
+							<li style="visibility: hidden;">
+								
 							</li>
-							<li >
-								???
+							<li style="visibility: hidden;">
+								
+							</li>
+							<li style="visibility: hidden;">
+								
 							</li>
 						</ul>
 						<br> <br>
-						<a href="https://github.com/jkrgS?tab=repositories" target="_blank" style="color: white"><i class="fa fa-github" style="font-size:33px"><span style="font-size: 18px">  ???</span></i></a>  
-						<a href="https://www.linkedin.com/in/gsisko/" target="_blank" style="color: white"><i class="fa fa-linkedin-square" style="font-size:33px"><span style="font-size: 18px">  ???</span></i></a> 
-						<a href="https://twitter.com/GeorgeJkrr" target="_blank" style="color: white"><i class="fa fa-twitter-square" style="font-size: 33px"><span style="font-size: 18px">  ???</span></i></a>
+						<a href="http://smirnios.gr" target="_blank" style="color: white"><i class="fa fa-address-card" style="font-size: 33px"><span style="font-size: 18px">  smirnios.gr</span></i></a>
+						<a href="https://twitter.com/GiannisSmirnios" target="_blank" style="color: white"><i class="fa fa-twitter-square" style="font-size: 33px"><span style="font-size: 18px">  @GiannisSmirnios</span></i></a>
 					</div>
 				</section>
 
@@ -344,8 +349,11 @@
 						</div>
 
 						<h3>
-							Scaling an Angular application using multiple router modules
+							Scaling an Angular application
 						</h3>
+						<h4>
+							<i class="fas fa-arrow-right"></i> using multiple router modules
+						</h4>
 						<ul class="list">
 							<li style="padding-left: 33px !important;">
 								Each functional page should have it’s 
@@ -364,7 +372,13 @@
 							<div class="floating" style="height: 100px; width: 100px;">
 								<img class="aaimgNav" src="./assets/pics/angularathens.png" alt="AA">
 							</div>
-							<img  src="./assets/pics/tree_structure_graph.png" alt="AA">
+							<img style=" background-color: white;" src="./assets/pics/tree_structure_graph.png" alt="tree_structure_graph">
+					</section>
+					<section>
+							<div class="floating" style="height: 100px; width: 100px;">
+								<img class="aaimgNav" src="./assets/pics/angularathens.png" alt="AA">
+							</div>
+							<img style=" background-color: white;" src="./assets/pics/tree_structure_graph_2.png" alt="tree_structure_graph">
 					</section>
 					<section>
 						<div class="floating" style="height: 100px; width: 100px;">
@@ -440,6 +454,81 @@
 							</li>
 						</ul>
 					</section>
+					<section>
+						<div class="floating" style="height: 100px; width: 100px;">
+							<img class="aaimgNav" src="./assets/pics/angularathens.png" alt="AA">
+						</div>
+
+						<h3>
+							A last advantage of splitting the router
+						</h3>
+						<ul class="list">
+							<li style="padding-left: 33px !important;">
+								Helps with each module’s… modularity
+								<ul class="list">
+									
+									<li style="padding-left: 33px !important;">
+										An independent module which includes an independent router for 
+										it’s components can be used as is across many applications
+									</li>
+									
+									<li style="padding-left: 33px !important;">
+											Should be well-designed:
+											<ul class="list">
+												<li style="padding-left: 33px !important;">
+													Emitting/Listening to events
+												</li>
+												<li style="padding-left: 33px !important;">
+													Having as generic as possible URL naming
+												</li>
+												<li style="padding-left: 33px !important;">
+													Correctly using URL parameters
+												</li>
+											</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					<section>
+							<div class="floating" style="height: 100px; width: 100px;">
+								<img class="aaimgNav" src="./assets/pics/angularathens.png" alt="AA">
+							</div>
+							<img style=" background-color: white;" src="./assets/pics/modularity.png" alt="tree_structure_graph">
+					</section>
+					<section>
+							<div class="floating" style="height: 100px; width: 100px;">
+								<img class="aaimgNav" src="./assets/pics/angularathens.png" alt="AA">
+							</div>
+	
+							<h3>
+								A scalable application example
+							</h3>
+							<pre style="font-size: 20px;">
+	|-- app
+	|-- modules
+		|-- home
+			|-- [+] components
+			|-- [+] pages
+			|-- home-routing.module.ts
+			|-- home.module.ts
+		|-- airports [+]
+		|-- ports [+]
+	|-- core
+		|-- [+] authentication
+		|-- [+] services
+		|-- [+] header
+		|-- core.module.ts
+	|-- shared
+		|-- [+] components
+		|-- [+] directives
+		|-- [+] pipes
+	|-- assets
+	|-- images
+	|-- css
+							</pre>
+						</section>
+
 				</section>
 
 				<section> <!-- Sources -->
@@ -456,7 +545,10 @@
 							SHA = Social Hackers Academy [<a href="https://socialhackersacademy.org/" target="_blank">https://socialhackersacademy.org/</a>]
 						</li>
 						<li>
-							???
+							<a href="https://codeburst.io/understanding-resolvers-in-angular-736e9db71267" target="_blank">Understanding Resolvers in Angular</a>: Ophir Raj	
+						</li>
+						<li>
+							<a href="https://bulldogjob.com/articles/539-scalable-angular-application-architecture" target="_blank">Scalable Angular Application Architecture</a>: Damian Sosnowski
 						</li>
 						<li>
 							???
@@ -468,13 +560,7 @@
 							???
 						</li>
 						<li>
-							???
-						</li>
-						<li>
-							???
-						</li>
-						<li>
-							???
+							<a href="https://codepen.io/MattIn4D/pen/LiKFC" target="_blank">a simple spinner</a>
 						</li>
 					</ul>
 				</section>
