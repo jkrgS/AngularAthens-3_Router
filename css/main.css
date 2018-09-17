@@ -48,6 +48,13 @@ img.aaimg {
     list-style-position: inside;
 }
 
+.introList {
+    font-size: 17px !important;
+    padding-left: 33px !important;
+    font-style: oblique !important;
+    list-style-position: inside;
+}
+
 .container {
     display: table;
     width: 100%;
